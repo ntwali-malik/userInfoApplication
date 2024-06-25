@@ -21,14 +21,18 @@ public class RetrieveServlet extends HttpServlet {
         out.println("<html><head>");
         out.println("<style>");
         out.println("body { font-family: Arial, sans-serif; background-color: #f0f8ff; color: #333; }");
-        out.println(".container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 80%; max-width: 600px; margin: auto; }");
-        out.println(".user-info { border-bottom: 1px solid #ddd; padding: 10px 0; }");
-        out.println(".user-info:last-child { border-bottom: none; }");
-        out.println(".user-info p { margin: 5px 0; }");
+        out.println(".container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 80%; max-width: 800px; margin: auto; }");
+        out.println("table { width: 100%; border-collapse: collapse; margin-top: 20px; }");
+        out.println("th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }");
+        out.println("th { background-color: #4682b4; color: white; }");
+        out.println("tr:nth-child(even) { background-color: #f2f2f2; }");
         out.println("</style>");
         out.println("</head><body>");
         out.println("<div class='container'>");
         out.println("<h1>User Information</h1>");
+        
+        out.println("<table>");
+        out.println("<tr><th>Name</th><th>Email</th></tr>");
         
         try {
             Class.forName("org.postgresql.Driver");
@@ -37,10 +41,10 @@ public class RetrieveServlet extends HttpServlet {
             ResultSet rs = stmt.executeQuery("SELECT name, email FROM users");
             
             while (rs.next()) {
-                out.println("<div class='user-info'>");
-                out.println("<p><strong>Name:</strong> " + rs.getString("name") + "</p>");
-                out.println("<p><strong>Email:</strong> " + rs.getString("email") + "</p>");
-                out.println("</div>");
+                out.println("<tr>");
+                out.println("<td>" + rs.getString("name") + "</td>");
+                out.println("<td>" + rs.getString("email") + "</td>");
+                out.println("</tr>");
             }
             
             rs.close();
@@ -50,6 +54,7 @@ public class RetrieveServlet extends HttpServlet {
             e.printStackTrace();
         }
         
+        out.println("</table>");
         out.println("</div>");
         out.println("</body></html>");
         out.close();
