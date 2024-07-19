@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/InsertSer")
+public class InsertSer extends HttpServlet{
 
-@WebServlet("/InsertServlet")
-public class InsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = request.getParameter("name");
@@ -36,5 +34,4 @@ public class InsertServlet extends HttpServlet {
 		
 		response.sendRedirect("retrieve.jsp");
 	}
-
 }

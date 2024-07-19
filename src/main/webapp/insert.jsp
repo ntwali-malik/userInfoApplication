@@ -58,7 +58,7 @@
 </head>
 <body>
     <h1>Insert User Information</h1>
-    <form action="insert" method="post">
+    <form action="InsertSer" method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name">
         <label for="email">Email:</label>

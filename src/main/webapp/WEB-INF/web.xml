@@ -11,22 +11,42 @@
   </welcome-file-list>
   
   <servlet>
-    <servlet-name>InsertServlet</servlet-name>
-    <servlet-class>InsertServlet</servlet-class>
+    <servlet-name>InsertSer</servlet-name>
+    <servlet-class>InsertSer</servlet-class>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>InsertServlet</servlet-name>
-    <url-pattern>/insert</url-pattern>
+    <servlet-name>InsertSer</servlet-name>
+    <url-pattern>/InsertSer</url-pattern>
   </servlet-mapping>
   
   <!-- Servlet for retrieving user information -->
   <servlet>
-    <servlet-name>RetrieveServlet</servlet-name>
-    <servlet-class>RetrieveServlet</servlet-class>
+    <servlet-name>RetrieveSer</servlet-name>
+    <servlet-class>RetrieveSer</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>RetrieveServlet</servlet-name>
+    <servlet-name>RetrieveSer</servlet-name>
     <url-pattern>/retrieve</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Servlet for updating user information -->
+  <servlet>
+    <servlet-name>UpdateSer</servlet-name>
+    <servlet-class>UpdateSer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateSer</servlet-name>
+    <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  
+   <!-- Servlet for deleting user information -->
+  <servlet>
+    <servlet-name>DeleteSer</servlet-name>
+    <servlet-class>DeleteSer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteSer</servlet-name>
+    <url-pattern>/delete</url-pattern>
   </servlet-mapping>
 </web-app>
